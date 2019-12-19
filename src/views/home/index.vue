@@ -2,7 +2,7 @@
 <!-- 外部容器 -->
 <el-container>
 <!-- 左侧 -->
-<el-aside style='background-color:#353b4e; height:100vh;width:220px'>
+<el-aside style='background-color:#353b4e; min-height:100vh;width:220px'>
   <layout-aside></layout-aside>
 </el-aside>
 <el-container>
@@ -11,7 +11,9 @@
    <herder></herder>
   </el-header>
   <!-- 内容 -->
-  <el-main>内容区域</el-main>
+  <el-main  style="padding:0">
+    <router-view></router-view>
+  </el-main>
 </el-container>
 </el-container>
 </template>
