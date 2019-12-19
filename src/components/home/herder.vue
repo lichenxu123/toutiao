@@ -15,7 +15,7 @@
           <el-dropdown-menu slot="dropdown" >
             <el-dropdown-item command="info">个人信息</el-dropdown-item>
             <el-dropdown-item command="git">git仓库</el-dropdown-item>
-            <el-dropdown-item command="dele">退出</el-dropdown-item>
+            <el-dropdown-item command="deleIn">退出</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </el-row>
@@ -46,9 +46,13 @@ export default {
         })
     },
     methods:{
-        dele(){
-            window.localStorage.removeItem('user-token'),
-            this.$router.push('/login')
+        dele(command){
+         if(command === 'deleIn'){
+           window.localStorage.removeItem('user-token'),
+           this.$router.push('/login')
+         }else{command === 'git'}{
+           window.location.href = 'https://github.com/lichenxu123/toutiao.git'
+         }
         }
     }
 }
